@@ -1,4 +1,5 @@
 export const InternalEvent = {
+  None: "none",
   FunctionFailed: "inngest/function.failed",
 } as const;
 

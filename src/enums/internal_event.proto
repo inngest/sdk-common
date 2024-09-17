@@ -1,0 +1,6 @@
+syntax = "proto3"
+
+enum InternalEvent {
+  NONE = 0 [(enum_value_name) = "none"];
+  FUNCTION_FAILED = 1 [(enum_value_name) = "inngest/function.failed"];
+}

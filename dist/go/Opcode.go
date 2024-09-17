@@ -3,10 +3,12 @@ package sdkcommon
 type Opcode string
 
 const (
-	OpcodeInvokefunction Opcode = "InvokeFunction"
+	OpcodeNone           Opcode = "None"
+	OpcodeStep           Opcode = "Step"
+	OpcodeStepRun        Opcode = "StepRun"
+	OpcodeStepError      Opcode = "StepError"
+	OpcodeStepPlanned    Opcode = "StepPlanned"
 	OpcodeSleep          Opcode = "Sleep"
-	OpcodeSteperror      Opcode = "StepError"
-	OpcodeStepplanned    Opcode = "StepPlanned"
-	OpcodeSteprun        Opcode = "StepRun"
-	OpcodeWaitforevent   Opcode = "WaitForEvent"
+	OpcodeWaitForEvent   Opcode = "WaitForEvent"
+	OpcodeInvokeFunction Opcode = "InvokeFunction"
 )

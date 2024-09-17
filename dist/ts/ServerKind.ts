@@ -1,4 +1,5 @@
 export const ServerKind = {
+  None: "none",
   Cloud: "cloud",
   Dev: "dev",
 } as const;

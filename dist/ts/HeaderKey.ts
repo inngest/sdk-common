@@ -1,4 +1,5 @@
 export const HeaderKey = {
+  None: "none",
   Authorization: "authorization",
   ContentType: "content-type",
   RetryAfter: "retry-after",

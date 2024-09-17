@@ -2,6 +2,7 @@ import enum
 
 
 class HeaderKey(enum.Enum):
+    NONE = "none"
     AUTHORIZATION = "authorization"
     CONTENT_TYPE = "content-type"
     RETRY_AFTER = "retry-after"

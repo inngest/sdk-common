@@ -1,0 +1,9 @@
+syntax = "proto3"
+
+enum QueryParamKey {
+  NONE = 0 [(enum_value_name) = "none"];
+  DEPLOY_ID = 1 [(enum_value_name) = "deployId"];
+  FN_ID = 2 [(enum_value_name) = "fnId"];
+  PROBE = 3 [(enum_value_name) = "probe"];
+  STEP_ID = 4 [(enum_value_name) = "stepId"];
+}

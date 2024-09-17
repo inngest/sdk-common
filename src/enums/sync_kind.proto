@@ -1,0 +1,7 @@
+syntax = "proto3"
+
+enum SyncKind {
+  NONE = 0 [(enum_value_name) = "none"];
+  OUT_OF_BAND = 1 [(enum_value_name) = "out_of_band"];
+  IN_BAND = 2 [(enum_value_name) = "in_band"];
+}

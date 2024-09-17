@@ -3,6 +3,7 @@ package sdkcommon
 type HeaderKey string
 
 const (
+	HeaderKeyNone                      HeaderKey = "none"
 	HeaderKeyAuthorization             HeaderKey = "authorization"
 	HeaderKeyContentType               HeaderKey = "content-type"
 	HeaderKeyRetryAfter                HeaderKey = "retry-after"

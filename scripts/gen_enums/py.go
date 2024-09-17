@@ -6,22 +6,17 @@ import (
 	"strings"
 )
 
-func genPython(config Config) error {
+func genPython(e enum) error {
 	code := "import enum\n\n\n"
 	code += "class ${NAME}(enum.Enum):\n"
-	for _, value := range config.Values {
-		key := value
-		if config.RemovePrefix != "" {
-			key = strings.TrimPrefix(key, config.RemovePrefix)
-		}
-		key = toScreamingSnakeCase(key)
-
-		code += fmt.Sprintf("    %s = \"%s\"\n", key, value)
+	for _, m := range e.Members {
+		key := toScreamingSnakeCase(m.Key)
+		code += fmt.Sprintf("    %s = \"%s\"\n", key, m.Value)
 	}
-	code = strings.ReplaceAll(code, "${NAME}", config.Name)
+	code = strings.ReplaceAll(code, "${NAME}", e.Name)
 
 	// Write the TypeScript code to a file
-	outputPath := fmt.Sprintf("./dist/py/%s.py", config.Name)
+	outputPath := fmt.Sprintf("./dist/py/%s.py", e.Name)
 	err := os.WriteFile(outputPath, []byte(code), 0644)
 	if err != nil {
 		return fmt.Errorf("error writing file: %w", err)

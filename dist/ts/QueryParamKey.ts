@@ -1,8 +1,9 @@
 export const QueryParamKey = {
-  Deployid: "deployId",
-  Fnid: "fnId",
+  None: "none",
+  DeployId: "deployId",
+  FnId: "fnId",
   Probe: "probe",
-  Stepid: "stepId",
+  StepId: "stepId",
 } as const;
 
 export type QueryParamKey = (typeof QueryParamKey)[keyof typeof QueryParamKey];

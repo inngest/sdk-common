@@ -1,0 +1,6 @@
+syntax = "proto3"
+
+enum Probe {
+  NONE = 0 [(enum_value_name) = "none"];
+  TRUST = 1 [(enum_value_name) = "trust"];
+}

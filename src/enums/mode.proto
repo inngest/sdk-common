@@ -1,0 +1,7 @@
+syntax = "proto3"
+
+enum Mode {
+  NONE = 0 [(enum_value_name) = "none"];
+  CLOUD = 1 [(enum_value_name) = "cloud"];
+  DEV = 2 [(enum_value_name) = "dev"];
+}

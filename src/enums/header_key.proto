@@ -1,0 +1,19 @@
+syntax = "proto3"
+
+enum HeaderKey {
+  NONE = 0 [(enum_value_name) = "none"];
+  AUTHORIZATION = 1 [(enum_value_name) = "authorization"];
+  CONTENT_TYPE = 2 [(enum_value_name) = "content-type"];
+  RETRY_AFTER = 3 [(enum_value_name) = "retry-after"];
+  SERVER_TIMING = 4 [(enum_value_name) = "server-timing"];
+  USER_AGENT = 5 [(enum_value_name) = "user-agent"];
+  INNGEST_ENV = 6 [(enum_value_name) = "x-inngest-env"];
+  INNGEST_EXPECTED_SERVER_KIND = 7 [(enum_value_name) = "x-inngest-expected-server-kind"];
+  INNGEST_FRAMEWORK = 8 [(enum_value_name) = "x-inngest-framework"];
+  INNGEST_NO_RETRY = 9 [(enum_value_name) = "x-inngest-no-retry"];
+  INNGEST_REQ_VERSION = 10 [(enum_value_name) = "x-inngest-req-version"];
+  INNGEST_SDK = 11 [(enum_value_name) = "x-inngest-sdk"];
+  INNGEST_SERVER_KIND = 12 [(enum_value_name) = "x-inngest-server-kind"];
+  INNGEST_SIGNATURE = 13 [(enum_value_name) = "x-inngest-signature"];
+  INNGEST_SYNC_KIND = 14 [(enum_value_name) = "x-inngest-sync-kind"];
+}

@@ -2,5 +2,6 @@ import enum
 
 
 class SyncKind(enum.Enum):
-    IN_BAND = "in_band"
+    NONE = "none"
     OUT_OF_BAND = "out_of_band"
+    IN_BAND = "in_band"

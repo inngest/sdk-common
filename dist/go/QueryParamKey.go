@@ -3,8 +3,9 @@ package sdkcommon
 type QueryParamKey string
 
 const (
-	QueryParamKeyDeployid QueryParamKey = "deployId"
-	QueryParamKeyFnid     QueryParamKey = "fnId"
+	QueryParamKeyNone     QueryParamKey = "none"
+	QueryParamKeyDeployId QueryParamKey = "deployId"
+	QueryParamKeyFnId     QueryParamKey = "fnId"
 	QueryParamKeyProbe    QueryParamKey = "probe"
-	QueryParamKeyStepid   QueryParamKey = "stepId"
+	QueryParamKeyStepId   QueryParamKey = "stepId"
 )

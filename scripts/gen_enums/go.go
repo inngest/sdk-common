@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func genGo(config Config) error {
+func genGo(e enum) error {
 	code := `
 package sdkcommon
 
@@ -15,18 +15,14 @@ type ${NAME} string
 
 const (
 `
-	for _, value := range config.Values {
-		key := value
-		if config.RemovePrefix != "" {
-			key = strings.TrimPrefix(key, config.RemovePrefix)
-		}
-		key = config.Name + toPascalCase(key)
-		code += fmt.Sprintf("\t%s %s = \"%s\"\n", key, config.Name, value)
+	for _, m := range e.Members {
+		key := "${NAME}" + toPascalCase(m.Key)
+		code += fmt.Sprintf("\t%s ${NAME} = \"%s\"\n", key, m.Value)
 	}
 	code += ")\n"
-	code = strings.ReplaceAll(code, "${NAME}", config.Name)
+	code = strings.ReplaceAll(code, "${NAME}", e.Name)
 
-	outputPath := fmt.Sprintf("./dist/go/%s.go", config.Name)
+	outputPath := fmt.Sprintf("./dist/go/%s.go", e.Name)
 	err := os.WriteFile(outputPath, []byte(code), 0644)
 	if err != nil {
 		return fmt.Errorf("error writing file: %w", err)

@@ -1,19 +1,21 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/emicklei/proto"
 )
 
-type Config struct {
-	Name string
+type member struct {
+	Key   string
+	Value string
+}
 
-	// Optionally remove a prefix when generating enum keys
-	RemovePrefix string `json:"remove_prefix"`
-
-	Values []string `json:"values"`
+type enum struct {
+	Members []member
+	Name    string
 }
 
 func main() {
@@ -31,27 +33,52 @@ func main() {
 			return
 		}
 
-		var config Config
-		err = json.Unmarshal(data, &config)
+		reader := strings.NewReader(string(data))
+		parser := proto.NewParser(reader)
+		definition, err := parser.Parse()
 		if err != nil {
-			fmt.Println("error parsing JSON:", err)
+			fmt.Println("error parsing proto file:", err)
 			return
 		}
-		config.Name = strings.Split(file.Name(), ".")[0]
 
-		err = genGo(config)
+		var protoEnum *proto.Enum
+		proto.Walk(definition,
+			proto.WithEnum(func(m *proto.Enum) {
+				if protoEnum != nil {
+					fmt.Printf("multiple enums found in proto file %s\n", file.Name())
+					return
+				}
+
+				protoEnum = m
+			}),
+		)
+		if protoEnum == nil {
+			fmt.Println("no Mode message found in proto file")
+			return
+		}
+
+		e := enum{Name: protoEnum.Name, Members: make([]member, 0)}
+		for _, element := range protoEnum.Elements {
+			if field, ok := element.(*proto.EnumField); ok {
+				key := field.Name
+				value := field.ValueOption.Constant.Source
+				e.Members = append(e.Members, member{Key: key, Value: value})
+			}
+		}
+
+		err = genGo(e)
 		if err != nil {
 			fmt.Println("error generating Go code:", err)
 			return
 		}
 
-		err = genPython(config)
+		err = genPython(e)
 		if err != nil {
 			fmt.Println("error generating Python code:", err)
 			return
 		}
 
-		err = genTypeScript(config)
+		err = genTypeScript(e)
 		if err != nil {
 			fmt.Println("error generating TypeScript code:", err)
 			return

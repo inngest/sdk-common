@@ -1,4 +1,5 @@
 export const Probe = {
+  None: "none",
   Trust: "trust",
 } as const;
 

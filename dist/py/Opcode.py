@@ -2,9 +2,11 @@ import enum
 
 
 class Opcode(enum.Enum):
-    INVOKE_FUNCTION = "InvokeFunction"
-    SLEEP = "Sleep"
+    NONE = "None"
+    STEP = "Step"
+    STEP_RUN = "StepRun"
     STEP_ERROR = "StepError"
     STEP_PLANNED = "StepPlanned"
-    STEP_RUN = "StepRun"
+    SLEEP = "Sleep"
     WAIT_FOR_EVENT = "WaitForEvent"
+    INVOKE_FUNCTION = "InvokeFunction"

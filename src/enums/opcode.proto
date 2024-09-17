@@ -1,0 +1,12 @@
+syntax = "proto3"
+
+enum Opcode {
+  NONE = 0 [(enum_value_name) = "None"];
+  STEP = 1 [(enum_value_name) = "Step"];
+  STEP_RUN = 2 [(enum_value_name) = "StepRun"];
+  STEP_ERROR = 3 [(enum_value_name) = "StepError"];
+  STEP_PLANNED = 4 [(enum_value_name) = "StepPlanned"];
+  SLEEP = 5 [(enum_value_name) = "Sleep"];
+  WAIT_FOR_EVENT = 6 [(enum_value_name) = "WaitForEvent"];
+  INVOKE_FUNCTION = 7 [(enum_value_name) = "InvokeFunction"];
+}
