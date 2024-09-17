@@ -1,0 +1,10 @@
+syntax = "proto3";
+package sdk.shared.v0;
+
+option go_package = "github.com/inngest/sdk-common/proto/gen/server_kind";
+
+enum ServerKind {
+  SERVER_KIND_NONE = 0;
+  SERVER_KIND_CLOUD = 1;
+  SERVER_KIND_DEV = 2;
+}

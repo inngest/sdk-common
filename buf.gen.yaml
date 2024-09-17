@@ -1,0 +1,13 @@
+version: v2
+
+clean: true
+
+plugins:
+  - remote: buf.build/protocolbuffers/go
+    out: gen/proto
+  # - plugin: go
+  #   out: proto/gen
+  #   opt: paths=source_relative
+  # - plugin: connect-go
+  #   out: proto/gen
+  #   opt: paths=source_relative

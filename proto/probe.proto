@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option go_package = "github.com/inngest/sdk-common/proto/gen/probe";
+
+enum Probe {
+  PROBE_NONE = 0;
+  PROBE_TRUST = 1;
+}

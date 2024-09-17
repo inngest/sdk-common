@@ -32,16 +32,20 @@
             # gomodifytags
             # gore
             # gotools
+            # protoc-gen-go
             # goreleaser
 
             # Node
             typescript
             nodejs_20
 
+            # LSPs
+            nodePackages.yaml-language-server
+
             # Tools
             buf
-            protoc-gen-go
-            protoc-gen-connect-go
+            # protoc-gen-go
+            # protoc-gen-connect-go
           ];
         };
       });

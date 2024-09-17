@@ -1,0 +1,12 @@
+syntax = "proto3";
+package sdk.shared.v0;
+
+option go_package = "github.com/inngest/sdk-common/proto/gen/query_param";
+
+enum QueryParam {
+  QUERY_PARAM_NONE = 0;
+  QUERY_PARAM_DEPLOY_ID = 1;
+  QUERY_PARAM_FN_ID = 2;
+  QUERY_PARAM_PROBE = 3;
+  QUERY_PARAM_STEP_ID = 4;
+}

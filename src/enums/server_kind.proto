@@ -1,7 +1,0 @@
-syntax = "proto3"
-
-enum ServerKind {
-  NONE = 0 [(enum_value_name) = "none"];
-  CLOUD = 1 [(enum_value_name) = "cloud"];
-  DEV = 2 [(enum_value_name) = "dev"];
-}
