@@ -1,0 +1,19 @@
+{
+  "remove_prefix": "x-",
+  "values": [
+    "authorization",
+    "content-type",
+    "retry-after",
+    "server-timing",
+    "user-agent",
+    "x-inngest-env",
+    "x-inngest-expected-server-kind",
+    "x-inngest-framework",
+    "x-inngest-no-retry",
+    "x-inngest-req-version",
+    "x-inngest-sdk",
+    "x-inngest-server-kind",
+    "x-inngest-signature",
+    "x-inngest-sync-kind"
+  ]
+}

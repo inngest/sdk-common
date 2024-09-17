@@ -1,0 +1,4 @@
+{
+  "remove_prefix": "inngest/",
+  "values": ["inngest/function.failed"]
+}
