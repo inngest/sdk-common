@@ -16,11 +16,12 @@ type ${NAME} string
 const (
 `
 	for _, value := range config.Values {
+		key := value
 		if config.RemovePrefix != "" {
-			value = strings.TrimPrefix(value, config.RemovePrefix)
+			key = strings.TrimPrefix(key, config.RemovePrefix)
 		}
-		constName := config.Name + toPascalCase(value)
-		code += fmt.Sprintf("\t%s %s = \"%s\"\n", constName, config.Name, value)
+		key = config.Name + toPascalCase(key)
+		code += fmt.Sprintf("\t%s %s = \"%s\"\n", key, config.Name, value)
 	}
 	code += ")\n"
 	code = strings.ReplaceAll(code, "${NAME}", config.Name)

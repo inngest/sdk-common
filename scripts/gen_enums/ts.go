@@ -9,10 +9,11 @@ import (
 func genTypeScript(config Config) error {
 	code := "export const ${NAME} = {\n"
 	for _, value := range config.Values {
+		key := value
 		if config.RemovePrefix != "" {
-			value = strings.TrimPrefix(value, config.RemovePrefix)
+			key = strings.TrimPrefix(key, config.RemovePrefix)
 		}
-		key := toPascalCase(value)
+		key = toPascalCase(key)
 		code += fmt.Sprintf("  %s: \"%s\",\n", key, value)
 	}
 	code += "} as const;\n\n"

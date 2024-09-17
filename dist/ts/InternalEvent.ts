@@ -1,5 +1,5 @@
 export const InternalEvent = {
-  FunctionFailed: "function.failed",
+  FunctionFailed: "inngest/function.failed",
 } as const;
 
 export type InternalEvent = (typeof InternalEvent)[keyof typeof InternalEvent];

@@ -3,5 +3,5 @@ package sdkcommon
 type InternalEvent string
 
 const (
-	InternalEventFunctionFailed InternalEvent = "function.failed"
+	InternalEventFunctionFailed InternalEvent = "inngest/function.failed"
 )

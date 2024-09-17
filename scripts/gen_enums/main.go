@@ -8,16 +8,19 @@ import (
 )
 
 type Config struct {
-	Name         string
-	RemovePrefix string   `json:"remove_prefix"`
-	Values       []string `json:"values"`
+	Name string
+
+	// Optionally remove a prefix when generating enum keys
+	RemovePrefix string `json:"remove_prefix"`
+
+	Values []string `json:"values"`
 }
 
 func main() {
 	enumsDir := "./src/enums"
 	files, err := os.ReadDir(enumsDir)
 	if err != nil {
-		fmt.Println("Error reading directory:", err)
+		fmt.Println("error reading directory:", err)
 		return
 	}
 

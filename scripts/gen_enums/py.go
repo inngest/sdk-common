@@ -10,10 +10,11 @@ func genPython(config Config) error {
 	code := "import enum\n\n\n"
 	code += "class ${NAME}(enum.Enum):\n"
 	for _, value := range config.Values {
+		key := value
 		if config.RemovePrefix != "" {
-			value = strings.TrimPrefix(value, config.RemovePrefix)
+			key = strings.TrimPrefix(key, config.RemovePrefix)
 		}
-		key := toScreamingSnakeCase(value)
+		key = toScreamingSnakeCase(key)
 
 		code += fmt.Sprintf("    %s = \"%s\"\n", key, value)
 	}
