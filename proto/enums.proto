@@ -27,6 +27,10 @@ enum Header {
   HEADER_X_INNGEST_SYNC_KIND = 14 [(str) = "x-inngest-sync-kind"];
 }
 
+enum InternalEvent {
+  INTERNAL_EVENT_NONE = 0 [(str) = "none"];
+  INTERNAL_EVENT_FUNCTION_FAILED = 1 [(str) = "inngest/function.failed"];
+}
 
 enum Mode {
   MODE_NONE = 0 [(str) = "none"];

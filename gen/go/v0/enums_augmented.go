@@ -25,3 +25,11 @@ func (op Opcode) Str() string {
 
 	return ext.(string)
 }
+
+func (i InternalEvent) Str() string {
+	vals := i.Descriptor().Values()
+	desc := vals.ByNumber(i.Number())
+	ext := proto.GetExtension(desc.Options(), E_Str)
+
+	return ext.(string)
+}

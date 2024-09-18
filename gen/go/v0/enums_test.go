@@ -151,3 +151,25 @@ func TestOpcodeValues(t *testing.T) {
 		})
 	}
 }
+
+func TestInternalEventValues(t *testing.T) {
+	tests := []struct {
+		enum  InternalEvent
+		value string
+	}{
+		{
+			enum:  InternalEvent_INTERNAL_EVENT_NONE,
+			value: "none",
+		},
+		{
+			enum:  InternalEvent_INTERNAL_EVENT_FUNCTION_FAILED,
+			value: "inngest/function.failed",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.enum.String(), func(t *testing.T) {
+			assert.Equal(t, test.value, test.enum.Str())
+		})
+	}
+}
