@@ -6,9 +6,9 @@ plugins:
     opt: paths=source_relative
     include_imports: true
     include_wkt: true
-  # - plugin: go
-  #   out: proto/gen
-  #   opt: paths=source_relative
-  # - plugin: connect-go
-  #   out: proto/gen
-  #   opt: paths=source_relative
+
+  # Python
+  - protoc_builtin: python
+    out: gen/py/v0
+    include_imports: true
+    include_wkt: true

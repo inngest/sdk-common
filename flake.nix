@@ -26,26 +26,20 @@
 
           nativeBuildInputs = with pkgs; [
             # Go
-            # go
-            # golangci-lint
-            # gotests
-            # gomodifytags
-            # gore
-            # gotools
-            # protoc-gen-go
-            # goreleaser
+            go
 
             # Node
             typescript
             nodejs_20
 
             # LSPs
+            gopls
             nodePackages.yaml-language-server
 
             # Tools
             buf
-            # protoc-gen-go
-            # protoc-gen-connect-go
+            protobuf
+            protoc-gen-go
           ];
         };
       });

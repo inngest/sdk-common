@@ -12,5 +12,5 @@ gen:
 
 .PHONY: protobuf
 protobuf:
-	rm gen/go/v0/*.pb.go
+	rm gen/go/v0/*.pb.go gen/py/v0/*_pb2.py
 	buf generate
