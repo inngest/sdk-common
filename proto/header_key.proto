@@ -1,22 +1,28 @@
 syntax = "proto3";
 package sdk.shared.v0;
 
+import "google/protobuf/descriptor.proto";
+
 option go_package = "github.com/inngest/sdk-common/gen/v0/go/header;sdk";
 
+extend google.protobuf.EnumValueOptions {
+  optional string str = 10000;
+}
+
 enum Header {
-  HEADER_NONE = 0;
-  HEADER_AUTHORIZATION = 1;
-  HEADER_CONTENT_TYPE = 2;
-  HEADER_RETRY_AFTER = 3;
-  HEADER_SERVER_TIMING = 4;
-  HEADER_USER_AGENT = 5;
-  HEADER_X_INNGEST_ENV = 6;
-  HEADER_X_INNGEST_EXPECTED_SERVER_KIND = 7;
-  HEADER_X_INNGEST_FRAMEWORK = 8;
-  HEADER_X_INNGEST_NO_RETRY = 9;
-  HEADER_X_INNGEST_REQ_VERSION = 10;
-  HEADER_X_INNGEST_SDK = 11;
-  HEADER_X_INNGEST_SERVER_KIND = 12;
-  HEADER_X_INNGEST_SIGNATURE = 13;
-  HEADER_X_INNGEST_SYNC_KIND = 14;
+  HEADER_NONE = 0 [(str) = "none"];
+  HEADER_AUTHORIZATION = 1 [(str) = "authorization"];
+  HEADER_CONTENT_TYPE = 2 [(str) = "content-type"];
+  HEADER_RETRY_AFTER = 3 [(str) = "retry-after"];
+  HEADER_SERVER_TIMING = 4 [(str) = "server-timing"];
+  HEADER_USER_AGENT = 5 [(str) = "user-agent"];
+  HEADER_X_INNGEST_ENV = 6 [(str) = "x-inngest-env"];
+  HEADER_X_INNGEST_EXPECTED_SERVER_KIND = 7 [(str) = "x-inngest-expected-server-kind"];
+  HEADER_X_INNGEST_FRAMEWORK = 8 [(str) = "x-inngest-framework"];
+  HEADER_X_INNGEST_NO_RETRY = 9 [(str) = "x-inngest-no-retry"];
+  HEADER_X_INNGEST_REQ_VERSION = 10 [(str) = "x-inngest-req-version"];
+  HEADER_X_INNGEST_SDK = 11 [(str) = "x-inngest-sdk"];
+  HEADER_X_INNGEST_SERVER_KIND = 12 [(str) = "x-inngest-server-kind"];
+  HEADER_X_INNGEST_SIGNATURE = 13 [(str) = "x-inngest-signature"];
+  HEADER_X_INNGEST_SYNC_KIND = 14 [(str) = "x-inngest-sync-kind"];
 }
