@@ -1,11 +1,11 @@
 version: v2
 
-clean: true
-
 plugins:
   - local: protoc-gen-go
     out: gen/go/v0
     opt: paths=source_relative
+    include_imports: true
+    include_wkt: true
   # - plugin: go
   #   out: proto/gen
   #   opt: paths=source_relative

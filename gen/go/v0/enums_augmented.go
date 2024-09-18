@@ -9,3 +9,11 @@ func (h Header) Str() string {
 
 	return ext.(string)
 }
+
+func (m Mode) Str() string {
+	vals := m.Descriptor().Values()
+	desc := vals.ByNumber(m.Number())
+	ext := proto.GetExtension(desc.Options(), E_Str)
+
+	return ext.(string)
+}

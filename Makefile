@@ -9,3 +9,8 @@ gen-enums:
 .PHONY: gen
 gen:
 	@make gen-enums
+
+.PHONY: protobuf
+protobuf:
+	rm gen/go/v0/*.pb.go
+	buf generate

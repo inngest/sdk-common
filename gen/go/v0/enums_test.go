@@ -79,3 +79,29 @@ func TestHeaderValues(t *testing.T) {
 		})
 	}
 }
+
+func TestModeValues(t *testing.T) {
+	tests := []struct {
+		enum  Mode
+		value string
+	}{
+		{
+			enum:  Mode_MODE_NONE,
+			value: "none",
+		},
+		{
+			enum:  Mode_MODE_CLOUD,
+			value: "cloud",
+		},
+		{
+			enum:  Mode_MODE_DEV,
+			value: "dev",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.enum.String(), func(t *testing.T) {
+			assert.Equal(t, test.value, test.enum.Str())
+		})
+	}
+}

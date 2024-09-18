@@ -1,9 +1,9 @@
 syntax = "proto3";
-package sdk.shared.v0;
+package sdk.shared;
 
 import "google/protobuf/descriptor.proto";
 
-option go_package = "github.com/inngest/sdk-common/gen/v0/go/header;sdk";
+option go_package = "github.com/inngest/sdk-common/gen/v0/go/enums;sdk";
 
 extend google.protobuf.EnumValueOptions {
   optional string str = 10000;
@@ -25,4 +25,11 @@ enum Header {
   HEADER_X_INNGEST_SERVER_KIND = 12 [(str) = "x-inngest-server-kind"];
   HEADER_X_INNGEST_SIGNATURE = 13 [(str) = "x-inngest-signature"];
   HEADER_X_INNGEST_SYNC_KIND = 14 [(str) = "x-inngest-sync-kind"];
+}
+
+
+enum Mode {
+  MODE_NONE = 0 [(str) = "none"];
+  MODE_CLOUD = 1 [(str) = "cloud"];
+  MODE_DEV = 2 [(str) = "dev"];
 }
