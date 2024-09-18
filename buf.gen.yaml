@@ -3,8 +3,9 @@ version: v2
 clean: true
 
 plugins:
-  - remote: buf.build/protocolbuffers/go
-    out: gen/proto
+  - local: protoc-gen-go
+    out: gen/go/v0
+    opt: paths=source_relative
   # - plugin: go
   #   out: proto/gen
   #   opt: paths=source_relative
