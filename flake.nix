@@ -27,19 +27,18 @@
           nativeBuildInputs = with pkgs; [
             # Go
             go
+            gopls
 
             # Node
             typescript
             nodejs_20
 
             # Python
-            (python311.withPackages (p: with p; [ pip virtualenv ]))
-
-            # LSPs
-            gopls
-            nodePackages.yaml-language-server
+            (python311.withPackages (p: with p; [ pip virtualenv ipython ]))
+            pyright
 
             # Tools
+            nodePackages.yaml-language-server
             buf
             protobuf
             protoc-gen-go
