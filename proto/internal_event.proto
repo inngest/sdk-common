@@ -1,7 +1,7 @@
 syntax = "proto3";
 package sdk.shared.v0;
 
-option go_package = "github.com/inngest/sdk-common/proto/gen/internal_event";
+option go_package = "github.com/inngest/sdk-common/gen/v0/go/internal_event;sdk";
 
 enum InternalEvent {
   INTERNAL_EVENT_NONE = 0;

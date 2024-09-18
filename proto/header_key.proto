@@ -1,7 +1,7 @@
 syntax = "proto3";
 package sdk.shared.v0;
 
-option go_package = "github.com/inngest/sdk-common/proto/gen/header";
+option go_package = "github.com/inngest/sdk-common/gen/v0/go/header;sdk";
 
 enum Header {
   HEADER_NONE = 0;

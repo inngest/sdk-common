@@ -1,7 +1,7 @@
 syntax = "proto3";
 package sdk.shared.v0;
 
-option go_package = "github.com/inngest/sdk-common/proto/gen/server_kind";
+option go_package = "github.com/inngest/sdk-common/gen/v0/go/server_kind;sdk";
 
 enum ServerKind {
   SERVER_KIND_NONE = 0;

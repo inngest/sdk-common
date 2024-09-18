@@ -1,7 +1,7 @@
 syntax = "proto3";
 package sdk.shared.v0;
 
-option go_package = "github.com/inngest/sdk-common/proto/gen/sync_kind";
+option go_package = "github.com/inngest/sdk-common/gen/v0/go/sync_kind;sdk";
 
 enum SyncKind {
   SYNC_KIND_NONE = 0;

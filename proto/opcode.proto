@@ -1,7 +1,7 @@
 syntax = "proto3";
 package sdk.shared.v0;
 
-option go_package = "github.com/inngest/sdk-common/proto/gen/opcode";
+option go_package = "github.com/inngest/sdk-common/gen/v0/go/opcode;sdk";
 
 enum Opcode {
   OPCODE_NONE = 0;
