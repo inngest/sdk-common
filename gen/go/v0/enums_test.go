@@ -105,3 +105,49 @@ func TestModeValues(t *testing.T) {
 		})
 	}
 }
+
+func TestOpcodeValues(t *testing.T) {
+	tests := []struct {
+		enum  Opcode
+		value string
+	}{
+		{
+			enum:  Opcode_OPCODE_NONE,
+			value: "None",
+		},
+		{
+			enum:  Opcode_OPCODE_STEP,
+			value: "Step",
+		},
+		{
+			enum:  Opcode_OPCODE_STEP_RUN,
+			value: "StepRun",
+		},
+		{
+			enum:  Opcode_OPCODE_STEP_ERROR,
+			value: "StepError",
+		},
+		{
+			enum:  Opcode_OPCODE_STEP_PLANNED,
+			value: "StepPlanned",
+		},
+		{
+			enum:  Opcode_OPCODE_SLEEP,
+			value: "Sleep",
+		},
+		{
+			enum:  Opcode_OPCODE_WAIT_FOR_EVENT,
+			value: "WaitForEvent",
+		},
+		{
+			enum:  Opcode_OPCODE_INVOKE_FUNCTION,
+			value: "InvokeFunction",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.enum.String(), func(t *testing.T) {
+			assert.Equal(t, test.value, test.enum.Str())
+		})
+	}
+}

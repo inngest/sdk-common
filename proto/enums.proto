@@ -33,3 +33,14 @@ enum Mode {
   MODE_CLOUD = 1 [(str) = "cloud"];
   MODE_DEV = 2 [(str) = "dev"];
 }
+
+enum Opcode {
+  OPCODE_NONE = 0 [(str) = "None"];
+  OPCODE_STEP = 1 [(str) = "Step"];
+  OPCODE_STEP_RUN = 2 [(str) = "StepRun"];
+  OPCODE_STEP_ERROR = 3 [(str) = "StepError"];
+  OPCODE_STEP_PLANNED = 4 [(str) = "StepPlanned"];
+  OPCODE_SLEEP = 5 [(str) = "Sleep"];
+  OPCODE_WAIT_FOR_EVENT = 6 [(str) = "WaitForEvent"];
+  OPCODE_INVOKE_FUNCTION = 7 [(str) = "InvokeFunction"];
+}

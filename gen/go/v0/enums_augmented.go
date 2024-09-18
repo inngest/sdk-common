@@ -17,3 +17,11 @@ func (m Mode) Str() string {
 
 	return ext.(string)
 }
+
+func (op Opcode) Str() string {
+	vals := op.Descriptor().Values()
+	desc := vals.ByNumber(op.Number())
+	ext := proto.GetExtension(desc.Options(), E_Str)
+
+	return ext.(string)
+}
