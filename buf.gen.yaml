@@ -12,3 +12,10 @@ plugins:
     out: gen/py/v0
     include_imports: true
     include_wkt: true
+
+  # Typescript
+  - local: protoc-gen-es
+    opt: target=ts
+    out: gen/ts/v0
+    include_imports: true
+    include_wkt: true

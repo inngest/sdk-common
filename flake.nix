@@ -32,6 +32,9 @@
             typescript
             nodejs_20
 
+            # Python
+            (python311.withPackages (p: with p; [ pip virtualenv ]))
+
             # LSPs
             gopls
             nodePackages.yaml-language-server
@@ -41,6 +44,14 @@
             protobuf
             protoc-gen-go
           ];
+
+          shellHook = ''
+            export PY_COLORS="1"
+            export PATH="$PWD/node_modules/.bin:$PATH"
+
+            [ ! -d .venv ] && python -m venv .venv
+            source .venv/bin/activate
+          '';
         };
       });
 }

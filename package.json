@@ -1,0 +1,12 @@
+{
+  "name": "sdk-common",
+  "version": "0.0.1",
+  "description": "Common types for Inngest SDKs",
+  "author": "Inngest Engineering <eng@inngest.com>",
+  "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
+  "dependencies": {
+    "@bufbuild/buf": "^1.42.0",
+    "@bufbuild/protobuf": "^2.1.0",
+    "@bufbuild/protoc-gen-es": "^2.1.0"
+  }
+}
