@@ -9,3 +9,8 @@ gen-enums:
 .PHONY: gen
 gen:
 	@make gen-enums
+
+.PHONY: protobuf
+protobuf:
+	rm gen/go/v0/*.pb.go gen/py/v0/*_pb2.py gen/ts/v0/*_pb.ts
+	buf generate

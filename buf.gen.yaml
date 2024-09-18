@@ -1,0 +1,21 @@
+version: v2
+
+plugins:
+  - local: protoc-gen-go
+    out: gen/go/v0
+    opt: paths=source_relative
+    include_imports: true
+    include_wkt: true
+
+  # Python
+  - protoc_builtin: python
+    out: gen/py/v0
+    include_imports: true
+    include_wkt: true
+
+  # Typescript
+  - local: protoc-gen-es
+    opt: target=ts
+    out: gen/ts/v0
+    include_imports: true
+    include_wkt: true
