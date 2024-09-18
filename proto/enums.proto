@@ -5,10 +5,12 @@ import "google/protobuf/descriptor.proto";
 
 option go_package = "github.com/inngest/sdk-common/gen/v0/go/enums;sdk";
 
+// extend the enum value option to provide a custom string value
 extend google.protobuf.EnumValueOptions {
   optional string str = 10000;
 }
 
+// Headers used to indicate behaviors
 enum Header {
   HEADER_NONE = 0 [(str) = "none"];
   HEADER_AUTHORIZATION = 1 [(str) = "authorization"];
@@ -27,17 +29,20 @@ enum Header {
   HEADER_X_INNGEST_SYNC_KIND = 14 [(str) = "x-inngest-sync-kind"];
 }
 
+// List of internal events
 enum InternalEvent {
   INTERNAL_EVENT_NONE = 0 [(str) = "none"];
   INTERNAL_EVENT_FUNCTION_FAILED = 1 [(str) = "inngest/function.failed"];
 }
 
+// Mode to be run on
 enum Mode {
   MODE_NONE = 0 [(str) = "none"];
   MODE_CLOUD = 1 [(str) = "cloud"];
   MODE_DEV = 2 [(str) = "dev"];
 }
 
+// Opcode signals between SDK and executor
 enum Opcode {
   OPCODE_NONE = 0 [(str) = "None"];
   OPCODE_STEP = 1 [(str) = "Step"];
@@ -47,4 +52,30 @@ enum Opcode {
   OPCODE_SLEEP = 5 [(str) = "Sleep"];
   OPCODE_WAIT_FOR_EVENT = 6 [(str) = "WaitForEvent"];
   OPCODE_INVOKE_FUNCTION = 7 [(str) = "InvokeFunction"];
+}
+
+// Used for trust probe
+enum Probe {
+  PROBE_NONE = 0 [(str) = "none"];
+  PROBE_TRUST = 1 [(str) = "trust"];
+}
+
+enum QueryParam {
+  QUERY_PARAM_NONE = 0 [(str) = "none"];
+  QUERY_PARAM_DEPLOY_ID = 1 [(str) = "deployId"];
+  QUERY_PARAM_FN_ID = 2 [(str) = "fnId"];
+  QUERY_PARAM_PROBE = 3 [(str) = "probe"];
+  QUERY_PARAM_STEP_ID = 4 [(str) = "stepId"];
+}
+
+enum ServerKind {
+  SERVER_KIND_NONE = 0 [(str) = "none"];
+  SERVER_KIND_CLOUD = 1 [(str) = "cloud"];
+  SERVER_KIND_DEV = 2 [(str) = "dev"];
+}
+
+enum SyncKind {
+  SYNC_KIND_NONE = 0 [(str) = "none"];
+  SYNC_KIND_OUT_OF_BAND = 1 [(str) = "out_of_band"];
+  SYNC_KIND_IN_BAND = 2 [(str) = "in_band"];
 }

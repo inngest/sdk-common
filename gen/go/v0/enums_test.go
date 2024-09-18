@@ -173,3 +173,111 @@ func TestInternalEventValues(t *testing.T) {
 		})
 	}
 }
+
+func TestProbeValues(t *testing.T) {
+	tests := []struct {
+		enum  Probe
+		value string
+	}{
+		{
+			enum:  Probe_PROBE_NONE,
+			value: "none",
+		},
+		{
+			enum:  Probe_PROBE_TRUST,
+			value: "trust",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.enum.String(), func(t *testing.T) {
+			assert.Equal(t, test.value, test.enum.Str())
+		})
+	}
+}
+
+func TestQueryParamValues(t *testing.T) {
+	tests := []struct {
+		enum  QueryParam
+		value string
+	}{
+		{
+			enum:  QueryParam_QUERY_PARAM_NONE,
+			value: "none",
+		},
+		{
+			enum:  QueryParam_QUERY_PARAM_DEPLOY_ID,
+			value: "deployId",
+		},
+		{
+			enum:  QueryParam_QUERY_PARAM_FN_ID,
+			value: "fnId",
+		},
+		{
+			enum:  QueryParam_QUERY_PARAM_PROBE,
+			value: "probe",
+		},
+		{
+			enum:  QueryParam_QUERY_PARAM_STEP_ID,
+			value: "stepId",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.enum.String(), func(t *testing.T) {
+			assert.Equal(t, test.value, test.enum.Str())
+		})
+	}
+}
+
+func TestServerKindValues(t *testing.T) {
+	tests := []struct {
+		enum  ServerKind
+		value string
+	}{
+		{
+			enum:  ServerKind_SERVER_KIND_NONE,
+			value: "none",
+		},
+		{
+			enum:  ServerKind_SERVER_KIND_CLOUD,
+			value: "cloud",
+		},
+		{
+			enum:  ServerKind_SERVER_KIND_DEV,
+			value: "dev",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.enum.String(), func(t *testing.T) {
+			assert.Equal(t, test.value, test.enum.Str())
+		})
+	}
+}
+
+func TestSyncKindValues(t *testing.T) {
+	tests := []struct {
+		enum  SyncKind
+		value string
+	}{
+		{
+			enum:  SyncKind_SYNC_KIND_NONE,
+			value: "none",
+		},
+		{
+			enum:  SyncKind_SYNC_KIND_OUT_OF_BAND,
+			value: "out_of_band",
+		},
+		{
+			enum:  SyncKind_SYNC_KIND_IN_BAND,
+			value: "in_band",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.enum.String(), func(t *testing.T) {
+			assert.Equal(t, test.value, test.enum.Str())
+		})
+	}
+}
